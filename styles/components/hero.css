@@ -1,0 +1,275 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: auto 100%;
+  }
+
+  .parallax-layer-static{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-size: auto 100%;
+  }
+  
+  .home__text__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    animation: fadeInFromTop 5s ease forwards;
+  }
+  
+  @keyframes fadeInFromTop {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .home__title {
+    opacity: 0;
+    animation: fadeInFromBottom 2s ease forwards;
+    background-image: linear-gradient(to top, #32adff00 0%, #ffffff 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline;
+  }
+  
+  @keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .home__p {
+    opacity: 0;
+    animation: fadeInFromBottom 2s ease forwards;
+    background-image: linear-gradient(to top, #32adff00 0%, #ffffff 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline;
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    15% { opacity: 0.7; } /* Partially transparent for a softer blink */
+    40% { opacity: 0; }
+    50% { opacity: 1; } /* Begin to transition back to visible */
+    80% { opacity: 0.7; }
+    100% { opacity: 0; } /* End the animation at 0 opacity */
+  }
+  
+  #layer11 {
+    background-image: url('/bg-11.png');
+    z-index: 15;
+    opacity: 0; /* Start at 0 opacity */
+    /* The animation is set up but not started by default */
+    animation-name: blink;
+    animation-duration: 3s; /* Total duration of the blinking sequence */
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; /* Maintain the style state of the last keyframe after the animation completes */
+    animation-iteration-count: 1; /* Run the animation only once each time it's triggered */
+  }
+
+  #layer12 {
+    z-index: 100;
+  }
+
+
+  #layer1 {
+    background-image: url('/bg-1.png');
+    z-index: 500;
+  }
+
+  #layer2 {
+    background-image: url('/bg-2.gif');
+    z-index: 11; 
+  }
+
+  #layer3 {
+    background-image: url('/bg-3.png');
+    z-index: 10; 
+  }
+
+  #layer4 {
+    background-image: url('/bg-4.png');
+    z-index: 11; 
+  }
+
+  #layer5 {
+    background-image: url('/bg-5.png');
+    z-index: 12; 
+  }
+
+  #layer5-5 {
+    background-image: url('/bg-5-5.gif');
+    z-index: 9; 
+  }
+
+  #layer5-6 {
+    background-image: url('/bg-5-6.png');
+    z-index: 8; 
+  }
+
+  #layer6 {
+    background-image: url('/bg-6.gif');
+    z-index: 7; 
+  }
+
+  #layer6-7 {
+    background-image: url('/bg-6-7.gif');
+    z-index: 6; 
+  }
+
+  #layer6-7-7 {
+    background-image: url('/bg-6-7-7.gif');
+    z-index: 5; 
+  }
+
+  #layer7 {
+    background-image: url('/bg-7.png');
+    z-index: 4;
+  }
+
+  #layer8 {
+    background-image: url('/bg-8.png');
+    z-index: 3;
+  }
+
+  #layer9 {
+    background-image: url('/bg-9.png');
+    z-index: 2;
+  }
+
+  #layer10 {
+    background-image: url('/bg-10.png');
+    z-index: 1;
+  }
+
+@media (min-width: 320px) {
+    .hero {
+        height: 40vh;
+      }
+
+      .home__title {
+        font-size: var(--size-2xl);
+      }
+      #layer12 {
+        /* Adjusted styling for mobile screens */
+        top: 8rem; /* Adjust 'Xpx' to the desired top position */
+      }
+}
+
+
+  /* XS */
+@media (min-width: 425px) {
+    .hero {
+        height: 40vh;
+      }
+      #layer12 {
+        /* Adjusted styling for mobile screens */
+        top: 5rem; /* Adjust 'Xpx' to the desired top position */
+      }
+}
+
+/* SM */
+@media (min-width: 640px) {
+  .home__title {
+    font-size: var(--size-4xl);
+  }
+  
+}
+
+/* MD */
+@media (min-width: 768px) {
+    .hero {
+        height: 60vh;
+      }
+
+      .home__title {
+        font-size: var(--size-4xl);
+      }
+
+      #layer12 {
+        /* Adjusted styling for mobile screens */
+        top: 4rem; /* Adjust 'Xpx' to the desired top position */
+      }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+      .hero {
+        height: 90vh;
+      }
+
+      .home__title {
+        font-size: var(--size-5xl);
+      }
+
+      #layer12 {
+        /* Adjusted styling for mobile screens */
+        top: 10rem; /* Adjust 'Xpx' to the desired top position */
+      }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+    .hero {
+        height: 95vh;
+      }
+
+      .home__title {
+        font-size: var(--size-7xl);
+      }
+      #layer12 {
+        /* Adjusted styling for mobile screens */
+        top: 4rem; /* Adjust 'Xpx' to the desired top position */
+      }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+    .hero {
+        height: 100vh;
+      }
+
+      .home__title {
+        font-size: var(--size-8xl);
+      }
+      #layer12 {
+        /* Adjusted styling for mobile screens */
+        top: -3rem; /* Adjust 'Xpx' to the desired top position */
+      }
+}

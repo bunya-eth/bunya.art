@@ -1,0 +1,152 @@
+.header__bars {
+    display: block;
+    position: fixed;
+    margin: 2rem;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.header__bars i {
+    color: var(--clr-light); /* Adjust the icon color */
+    font-size: var(--size-3xl); /* Adjust the icon size */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    padding: 0 2rem;
+    z-index: 9999;
+}
+
+.header__logo {
+    display: none;
+}
+
+.header__menu {
+    display: none;
+}
+
+/* XS */
+/* @media (min-width: 475px) {
+} */
+
+/* SM */
+/* @media (min-width: 640px) {
+} */
+
+/* MD */
+@media (min-width: 768px) {
+    .header {
+        position: fixed;
+        display: flex; /* Use flexbox for layout */
+        justify-content: space-between; /* Aligns children (text and logo) on both ends */
+        align-items: center; /* Centers children vertically */
+        width: 100%;
+        height: 10%;
+        padding: 0 1rem; /* Adds padding on the left and right */
+        z-index: 9999;
+        background-color: var(--black-base200);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.411);
+    }
+    
+    .header__left,
+    .header__right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .header__menu {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 1em;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header__link {
+        text-decoration: none;
+        color: var(--clr-light);
+        transition: color 0.3s;
+        transition: background-color 0.3s;
+        font-size: var(--size-sm);
+        padding: 0.07rem;
+        cursor: url('/cursor-pointer.cur'), pointer;
+    }
+    
+    .header__link:hover {
+        color: var(--black-base200);
+        background-color: var(--clr-light);
+    }
+    
+    .header__logo {
+        display: flex;
+        height: auto;
+        width: 3rem;
+        animation: bobbing 1s steps(2, end) infinite;
+        cursor: url('/cursor-pointer.cur'), pointer;
+    }
+
+    @keyframes bobbing {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-2px);
+        }
+      }
+    
+    .header__bars{
+        display: none;
+    }
+
+}
+
+/* LG */
+@media (min-width: 1024px) {
+    .header {
+        position: fixed;
+        display: flex; /* Use flexbox for layout */
+        justify-content: space-between; /* Aligns children (text and logo) on both ends */
+        align-items: center; /* Centers children vertically */
+        width: 100%;
+        height: 8%;
+        padding: 0 2rem; /* Adds padding on the left and right */
+        z-index: 9999;
+        background-color: var(--black-base200);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.411);
+
+    }
+
+    .header__link{
+        font-size: var(--size-sm);
+    }
+
+    .header__logo {
+        display: flex;
+        height: auto; /* Maintains aspect ratio */
+        width: 3.5rem; /* Adjust as needed */
+    }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+    .header__link{
+        font-size: var(--size-base);
+    }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+    .header__link{
+        font-size: var(--size-lg);
+        padding: 0.07rem;
+    }
+}

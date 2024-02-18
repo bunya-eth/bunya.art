@@ -1,0 +1,640 @@
+.folder-wrapper {
+  position: absolute;
+  top: 9%;
+  left: 2%;
+  text-align: center; 
+  cursor: url('/cursor-pointer.cur'), pointer;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+.folder-wrapper:hover{
+  background-color: #ffffff4d;
+}
+
+.folder-wrapper svg {
+  width: 4rem;
+  height: 4rem;
+  color: var(--clr-light);
+}
+
+.folder-label {
+  display: block;
+  color: var(--clr-light);
+}
+
+.window {
+  position: absolute;
+  width: 30rem; /* Specify the width of the window */
+  height: 20rem; /* Specify the height of the window */
+  top: 30%;
+  left: 38%;
+  border: 2px solid var(--clr-dark);
+  background-color: var(--black-base200);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  z-index: 1001;
+  display: none;
+}
+
+.window-title-bar {
+  color: var(--clr-light);
+  background-color: var(--purple-light);
+  display: flex;
+  border-bottom: 2px solid black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  cursor: url('/grab.cur'), grab;
+}
+
+.window-title {
+  font-weight: bold;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.window.minimized .window-content {
+  display: none; /* Hide the content when minimized */
+}
+
+.window-minimize,
+.window-close {
+  cursor: pointer;
+  padding: 0.15rem 0.5rem;
+  background-color: var(--purple-base);
+  cursor: url('/cursor-pointer.cur'), pointer;
+}
+
+.window-minimize:hover{
+  background-color: var(--purple-dark);
+}
+
+.window-close:hover {
+  background-color: #bd2222;
+}
+
+.window-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  padding: 1rem;
+  z-index: 1002;
+  overflow-y: auto;
+  max-height: 16rem;
+}
+
+
+.files-container {
+  display: flex;
+}
+
+.file-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem; /* Space between file icons */
+  cursor: url('/cursor-pointer.cur'), pointer;
+}
+
+.file-icon svg {
+  width: 2.25; /* even smaller size for mobile screens */
+  height: auto;
+}
+
+.file-label {
+  margin-top: 0.2rem; /* Space between icon and label */
+}
+  
+
+    /* XXS */
+@media (min-width: 200px) {
+  .folder-wrapper {
+    position: absolute;
+    top: 16%;
+    left: 5.5%;
+    text-align: center; 
+    cursor: url('/cursor-pointer.cur'), pointer;
+    z-index: 1000;
+    overflow-x: hidden;
+  }
+
+  .text-file-content {
+    /* Example styles */
+    font-size: 0.6rem;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+  }
+
+  .folder-wrapper svg {
+    width: 2.5rem;
+    height: auto;
+    color: var(--clr-light);
+  }
+
+  .folder-label {
+    font-size: 0.7rem; /* Adjust icon size */
+  }
+
+  .window {
+    position: absolute;
+    width: 15rem; /* Specify the width of the window */
+    height: 16rem; /* Specify the height of the window */
+    top: 15%;
+    left: 25%;
+    display: none;
+  }
+
+  .window-minimize,
+  .window-close {
+  padding: 0.04rem 0.5rem;
+}
+
+.window-title-bar {
+  padding: 0.2rem 0.5rem;
+}
+
+  .window-title {
+    font-size: 0.8rem; /* Adjust icon size */
+    font-weight: bold;
+  }
+
+  .window.minimized {
+    height: 2.2rem; /* Height of the title bar only */
+    min-height: 2.2rem; /* To prevent the window from being resized */
+    width: 10rem; /* Restore the original width if it was changed */
+    overflow: hidden;
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+
+  .file-icon svg {
+    width: 2.75rem;
+    height: auto;
+  }
+
+  .file-label {
+    font-size: 0.53rem; /* Adjust icon size */
+  }
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    z-index: 1002;
+    overflow-y: auto;
+    max-height: 12rem;
+  }
+}
+
+  /* XS */
+@media (min-width: 425px) {
+  .folder-wrapper {
+    position: absolute;
+    top: 16%;
+    left: 5.5%;
+    text-align: center; 
+    cursor: url('/cursor-pointer.cur'), pointer;
+    z-index: 1000;
+    overflow-x: hidden;
+  }
+
+  .text-file-content {
+    /* Example styles */
+    font-size: 0.6rem;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+  }
+
+  .folder-wrapper svg {
+    width: 2.5rem;
+    height: auto;
+    color: var(--clr-light);
+  }
+
+  .folder-label {
+    font-size: 0.7rem; /* Adjust icon size */
+  }
+
+  .window {
+    position: absolute;
+    width: 15rem; /* Specify the width of the window */
+    height: 16rem; /* Specify the height of the window */
+    top: 15%;
+    left: 25%;
+    display: none;
+  }
+
+  .window-minimize,
+  .window-close {
+  padding: 0.04rem 0.5rem;
+}
+
+.window-title-bar {
+  padding: 0.2rem 0.5rem;
+}
+
+  .window-title {
+    font-size: 0.8rem; /* Adjust icon size */
+    font-weight: bold;
+  }
+
+  .window.minimized {
+    height: 2.2rem; /* Height of the title bar only */
+    min-height: 2.2rem; /* To prevent the window from being resized */
+    width: 12rem; /* Restore the original width if it was changed */
+    overflow: hidden;
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+
+  .file-icon svg {
+    width: 3.9rem; /* even smaller size for mobile screens */
+    height: auto;
+  }
+  .file-label {
+    font-size: 0.53rem; /* Adjust icon size */
+  }
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    z-index: 1002;
+    overflow-y: auto;
+    max-height: 12rem;
+  }
+}
+
+/* SM */
+@media (min-width: 640px) {
+  .home__title {
+    font-size: var(--size-3xl);
+  }
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .folder-wrapper {
+    position: absolute;
+    top: 13.5%;
+    left: 5.5%;
+    text-align: center; 
+    cursor: url('/cursor-pointer.cur'), pointer;
+    z-index: 1000;
+    overflow-x: hidden;
+  }
+
+  .text-file-content {
+    /* Example styles */
+    font-size: 0.6rem;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+  }
+
+  .folder-wrapper svg {
+    width: 3.75rem;
+    height: auto;
+    color: var(--clr-light);
+  }
+
+  .folder-label {
+    font-size: 0.7rem; /* Adjust icon size */
+  }
+
+  .window {
+    position: absolute;
+    width: 24rem; /* Specify the width of the window */
+    height: 15rem; /* Specify the height of the window */
+    top: 15%;
+    left: 25%;
+    display: none;
+  }
+
+  .window-minimize,
+  .window-close {
+  padding: 0.04rem 0.5rem;
+}
+
+.window-title-bar {
+  padding: 0.2rem 0.5rem;
+}
+
+  .window-title {
+    font-size: 0.8rem; /* Adjust icon size */
+    font-weight: bold;
+  }
+
+  .window.minimized {
+    height: 2.2rem; /* Height of the title bar only */
+    min-height: 2.2rem; /* To prevent the window from being resized */
+    width: 15rem; /* Restore the original width if it was changed */
+    overflow: hidden;
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+
+  .file-icon svg {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    width: 6.5rem;
+    height: auto;
+  }
+
+  .file-icon:hover{
+    background-color: #a0a9b25b;
+    border-color: #ffffff73; /* Change border color on hover */
+  }
+  
+  .file-label {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    margin-top: -0.6rem; /* Space between icon and label */
+    font-size: 0.8rem;
+  }
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    z-index: 1002;
+    overflow-y: auto;
+    max-height: 11.5rem;
+  }
+
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .folder-wrapper {
+    position: absolute;
+    top: 16%;
+    left: 5.5%;
+    text-align: center; 
+    cursor: url('/cursor-pointer.cur'), pointer;
+    z-index: 1000;
+    overflow-x: hidden;
+  }
+
+  .text-file-content {
+    /* Example styles */
+    font-size: 0.6rem;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+  }
+
+  .text-file-content {
+    /* Example styles */
+    font-size: 1rem;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+  }
+
+  .folder-wrapper svg {
+    width: 2.5rem;
+    height: auto;
+    color: var(--clr-light);
+  }
+
+  .folder-label {
+    font-size: 1rem; /* Adjust icon size */
+  }
+
+  .window {
+    position: absolute;
+    width: 25rem; /* Specify the width of the window */
+    height: 15rem; /* Specify the height of the window */
+    top: 15%;
+    left: 25%;
+    display: none;
+  }
+
+  .window-minimize,
+  .window-close {
+  padding: 0.04rem 0.5rem;
+}
+
+.window-title-bar {
+  padding: 0.2rem 0.5rem;
+}
+
+  .window-title {
+    font-size: 1rem; /* Adjust icon size */
+    font-weight: bold;
+  }
+
+  .window.minimized {
+    height: 2.2rem; /* Height of the title bar only */
+    min-height: 2.2rem; /* To prevent the window from being resized */
+    width: 15rem; /* Restore the original width if it was changed */
+    overflow: hidden;
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+
+  .file-icon svg {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    width: 7rem;
+    height: auto;
+  }
+
+  
+  .file-label {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    margin-top: -0.6rem; /* Space between icon and label */
+    font-size: 0.7rem;
+  }
+    .folder-wrapper svg {
+    width: 3.75rem;
+    height: auto;
+  }
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    z-index: 1002;
+    overflow-y: auto;
+    max-height: 11.5rem;
+  }
+
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .home__title {
+    font-size: var(--size-5xl);
+  }
+
+  .window.minimized {
+    height: 2.3rem; /* Height of the title bar only */
+    min-height: 2.3rem; /* To prevent the window from being resized */
+    width: 15rem; /* Restore the original width if it was changed */
+    overflow: hidden;
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+
+  .file-icon svg {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    width: 7rem;
+    height: auto;
+  }
+
+  .folder-wrapper svg {
+    width: 5rem;
+    height: auto;
+    color: var(--clr-light);
+  }
+  
+  .file-label {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    margin-top: -0.6rem; /* Space between icon and label */
+    font-size: 0.8rem;
+  }
+
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    z-index: 1002;
+    overflow-y: auto;
+    max-height: 11.5rem;
+  }
+
+  .window-minimize,
+  .window-close {
+    cursor: pointer;
+    padding: 0.1rem 0.5rem;
+    background-color: var(--purple-base);
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+  
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+  .folder-wrapper {
+    position: absolute;
+    top: 9%;
+    left: 2%;
+    text-align: center; 
+    cursor: url('/cursor-pointer.cur'), pointer;
+    z-index: 1000;
+    overflow-x: hidden;
+  }
+  
+  .folder-wrapper:hover{
+    background-color: #ffffff4d;
+  }
+  
+  .folder-wrapper svg {
+    width: 5rem;
+    height: auto;
+    color: var(--clr-light);
+  }
+  
+  .folder-label {
+    display: block;
+    color: var(--clr-light);
+  }
+  
+  .window {
+    position: absolute;
+    width: 31rem; /* Specify the width of the window */
+    height: 20rem; /* Specify the height of the window */
+    top: 30%;
+    left: 38%;
+    padding: 0;
+    margin: 0;
+    z-index: 1001;
+    display: none;
+  }
+  
+  .window-title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.7rem;
+    cursor: url('/grab.cur'), grab;
+  }
+  
+  .window-title {
+    font-weight: bold;
+  }
+  
+  .window-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .window.minimized {
+    height: 2.3rem; /* Height of the title bar only */
+    min-height: 2.3rem; /* To prevent the window from being resized */
+    width: 15rem; /* Restore the original width if it was changed */
+    overflow: hidden;
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+  
+  .window.minimized .window-content {
+    display: none; /* Hide the content when minimized */
+  }
+  
+  .window-minimize,
+  .window-close {
+    cursor: pointer;
+    padding: 0.1rem 0.5rem;
+    background-color: var(--purple-base);
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+  
+  .window-close:hover {
+    background-color: #bd2222;
+  }
+  
+  .window-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 1rem;
+    z-index: 1002;
+    overflow-y: auto;
+    max-height: 16rem;
+  }
+  
+  
+  .files-container {
+    display: flex;
+  }
+  
+  .file-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 1rem; /* Space between file icons */
+    cursor: url('/cursor-pointer.cur'), pointer;
+  }
+  
+  .file-icon svg {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    width: 7.20rem;
+    height: auto;
+  }
+
+  .file-icon:hover{
+    background-color: #a0a9b25b;
+    border-color: #ffffff73; /* Change border color on hover */
+  }
+  
+  .file-label {
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    margin-top: -0.8rem; /* Space between icon and label */
+    font-size: 0.8rem;
+  }
+}

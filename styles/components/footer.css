@@ -1,0 +1,74 @@
+
+
+  /* XS */
+/* @media (min-width: 475px) {
+} */
+
+/* SM */
+@media (max-width: 767px) {
+    .footer{
+        display: none;
+    }
+}
+
+/* MD */
+@media (min-width: 768px) {
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--black-base200);
+        color: var(--clr-light);
+        text-align: center;
+        padding: 1rem 0;
+        z-index: 9999;
+        border-top: 1px solid rgba(255, 255, 255, 0.411);
+      }
+      
+    .footer__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        max-width: -4rem;
+        margin: auto;
+    }
+    
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    .social-links a:hover {
+        transform: translateY(-0.2rem);
+    }
+    
+    .social-links a {
+        color: #ffffff; /* Adjust color as needed */
+        text-decoration: none;
+        cursor: url('/cursor-pointer.cur'), pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .player__wrapper {
+        flex: 1; /* Allows player wrapper to take up available space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px; /* Adds gap between player elements */
+    }
+}
+
+/* LG */
+/* @media (min-width: 1024px) {
+} */
+
+/* XL */
+/* @media (min-width: 1280px) {
+} */
+
+/* 2XL */
+/* @media (min-width: 1536px) {
+} */

@@ -1,0 +1,261 @@
+
+.player__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-right: 2rem;
+}
+
+.player{
+    position: relative;
+    display: grid;
+    grid-template-columns: 3rem 1fr 4rem;
+    grid-gap: 1rem;
+}
+
+.control,#current{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 0.5rem;
+}
+
+#playbtn{
+    font-size: var(--size-xl);
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--clr-light);
+    cursor: url('/cursor-pointer.cur'), pointer;
+}
+
+#playbtn:hover{
+    -webkit-text-fill-color: var(--clr-light);
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--size-xl);
+}
+
+.info a{
+    color: var(--clr-light);
+    cursor: url('/cursor-pointer.cur'), pointer;
+}
+
+#current{
+    text-align: right;
+}
+
+.bar{
+    --space: 0rem;
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+    left: var(--space);
+    right: var(--space);
+    top: var(--space);
+    bottom: var(--space);
+    background-color: #5050502c;
+}
+
+#progress{
+    display: block;
+    width: var(--progress,0%);
+    background-color: var(--purple-base);
+    transition: all 1s linear;
+    height: 100%;
+    z-index: 100;
+}
+
+.info-hover{
+    padding: 0.5rem;
+    font-size: var(--size-base);
+    transition: transform 0.3s;
+}
+
+.info-hover:hover{
+    color: var(--gold-base);
+    
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--size-2xl);
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--clr-light);
+    cursor: pointer;
+    padding: 0 1rem;
+    cursor: url('/cursor-pointer.cur'), pointer;
+}
+
+.volume-control:hover{
+    -webkit-text-fill-color: var(--clr-light);
+}
+
+#volumebar {
+    width: 6rem;
+    cursor: pointer;
+    cursor: url('/cursor-pointer.cur'), pointer;
+}
+
+
+input[type="range"] {
+    -webkit-appearance: none; /* Override default appearance */
+    width: 100%; /* Full-width */
+    height: 0.1rem; /* Specified height of the slider */
+    background: var(--clr-light); /* Make the slider background transparent */
+  }
+  
+  /* Styles for the thumb (the draggable circle) */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default appearance */
+    appearance: none;
+    width: 1rem; /* Width and height of the thumb */
+    height: 1rem;
+    background: #552583; /* Your custom color */
+    border-radius: 50%; /* Make it circular */
+    transition: background 0.3s ease;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--clr-light);
+  }
+  
+  /* Styles for the track (the line the thumb slides on) */
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1rem;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--clr-light);
+  }
+
+  /* XS */
+/* @media (min-width: 475px) {
+} */
+
+/* SM */
+/* @media (min-width: 640px) {
+} */
+
+/* MD */
+@media (max-width: 767px) {
+    .player, .control,#current, .info, .bar, .volume-control, #volumebar, .fa-solid, .fa-volume-high {
+        display: none;
+    }
+}
+
+/* LG */
+@media (max-width: 1024px) {
+    .player__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding-right: 0rem;
+    }
+
+    .player{
+        grid-template-columns: 3rem 1fr 4rem;
+        grid-gap: 0.3rem;
+        padding: 0.6rem;
+    }
+    
+    #playbtn{
+        font-size: var(--size-base);
+    }
+    
+    .info{
+        font-size: var(--size-base);
+    }
+    
+    .info a{
+        font-size: var(--size-base);
+        color: var(--clr-light);
+    }
+    
+    #current{
+        text-align: right;
+        font-size: var(--size-base);
+    }
+
+    .bar{
+        --space: 1rem;
+        overflow: hidden;
+        position: absolute;
+        z-index: -2;
+        left: var(--space);
+        right: var(--space);
+        top: var(--space);
+        bottom: var(--space);
+        background-color: #5050502c;
+    }
+    
+    .info-hover:hover{
+        color: var(--gold-base);
+        
+    }
+    
+    .volume-control {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: var(--size-sm);
+        padding: -2rem;
+    }
+    
+    
+    .volume-control:hover{
+        -webkit-text-fill-color: var(--clr-light);
+    }
+    
+    #volumebar {
+        width: 6rem;
+        cursor: pointer;
+    }
+    input[type="range"] {
+        -webkit-appearance: none; /* Override default appearance */
+        width: 100%; /* Full-width */
+        height: 0.1rem; /* Specified height of the slider */
+        background: var(--clr-light); /* Make the slider background transparent */
+      }
+      
+      /* Styles for the thumb (the draggable circle) */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default appearance */
+        appearance: none;
+        width: 1rem; /* Width and height of the thumb */
+        height: 1rem;
+        background: #552583; /* Your custom color */
+        border-radius: 50%; /* Make it circular */
+        transition: background 0.3s ease;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--clr-light);
+      }
+      
+      /* Styles for the track (the line the thumb slides on) */
+      input[type="range"]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 1rem;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--clr-light);
+      }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+    .info a{
+        font-size: var(--size-base);
+        color: var(--clr-light);
+    }
+}
+
+/* 2XL */
+/* @media (max-width: 1536px) {
+} */

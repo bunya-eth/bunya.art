@@ -129,14 +129,25 @@
     white-space: pre-wrap; /* Preserves spaces and line breaks */
   }
 
-  .folder-wrapper svg {
-    width: 2.5rem;
+  .folder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
     height: auto;
     color: var(--clr-light);
   }
 
+  .folder-icon-png{
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+
   .folder-label {
-    font-size: 0.7rem; /* Adjust icon size */
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
   }
 
   .window {
@@ -170,8 +181,8 @@
     cursor: url('/cursor-pointer.cur'), pointer;
   }
 
-  .file-icon svg {
-    width: 2.75rem;
+  .file-icon-file{
+    width: 2rem;
     height: auto;
   }
 
@@ -208,14 +219,25 @@
     white-space: pre-wrap; /* Preserves spaces and line breaks */
   }
 
-  .folder-wrapper svg {
-    width: 2.5rem;
+  .folder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
     height: auto;
     color: var(--clr-light);
   }
 
+  .folder-icon-png{
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+
   .folder-label {
-    font-size: 0.7rem; /* Adjust icon size */
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
   }
 
   .window {
@@ -244,13 +266,13 @@
   .window.minimized {
     height: 2.2rem; /* Height of the title bar only */
     min-height: 2.2rem; /* To prevent the window from being resized */
-    width: 12rem; /* Restore the original width if it was changed */
+    width: 14rem; /* Restore the original width if it was changed */
     overflow: hidden;
     cursor: url('/cursor-pointer.cur'), pointer;
   }
 
-  .file-icon svg {
-    width: 3.9rem; /* even smaller size for mobile screens */
+  .file-icon-file{
+    width: 2rem; /* even smaller size for mobile screens */
     height: auto;
   }
   .file-label {
@@ -293,14 +315,25 @@
     white-space: pre-wrap; /* Preserves spaces and line breaks */
   }
 
-  .folder-wrapper svg {
-    width: 3.75rem;
+  .folder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
     height: auto;
     color: var(--clr-light);
   }
 
+  .folder-icon-png{
+    margin-top: 0.5rem;
+    width: 2rem;
+    height: auto;
+  }
+
   .folder-label {
-    font-size: 0.7rem; /* Adjust icon size */
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
   }
 
   .window {
@@ -334,10 +367,10 @@
     cursor: url('/cursor-pointer.cur'), pointer;
   }
 
-  .file-icon svg {
+  .file-icon-file{
     border: 1px solid transparent; /* Add transparent border by default */
     padding: 0.5rem;
-    width: 6.5rem;
+    width: 3.5rem;
     height: auto;
   }
 
@@ -389,14 +422,25 @@
     white-space: pre-wrap; /* Preserves spaces and line breaks */
   }
 
-  .folder-wrapper svg {
-    width: 2.5rem;
+  .folder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
     height: auto;
     color: var(--clr-light);
   }
 
+  .folder-icon-png{
+    margin-top: 0.5rem;
+    width: 3rem;
+    height: auto;
+  }
+
   .folder-label {
-    font-size: 1rem; /* Adjust icon size */
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 
   .window {
@@ -430,10 +474,10 @@
     cursor: url('/cursor-pointer.cur'), pointer;
   }
 
-  .file-icon svg {
+  .file-icon-file{
     border: 1px solid transparent; /* Add transparent border by default */
     padding: 0.5rem;
-    width: 7rem;
+    width: 4.5rem;
     height: auto;
   }
 
@@ -475,24 +519,34 @@
     cursor: url('/cursor-pointer.cur'), pointer;
   }
 
-  .file-icon svg {
+  .file-icon-file{
     border: 1px solid transparent; /* Add transparent border by default */
     padding: 0.5rem;
-    width: 7rem;
+    width: 4.5rem;
     height: auto;
   }
 
-  .folder-wrapper svg {
+  .folder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 5rem;
     height: auto;
     color: var(--clr-light);
   }
-  
-  .file-label {
+
+  .folder-icon-png{
+    margin-top: 0.5rem;
+    width: 3.5rem;
+    height: auto;
+  }
+
+  .folder-label {
     border: 1px solid transparent; /* Add transparent border by default */
     padding: 0.5rem;
-    margin-top: -0.6rem; /* Space between icon and label */
-    font-size: 0.8rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
 
   .window-content {
@@ -531,15 +585,27 @@
     background-color: #ffffff4d;
   }
   
-  .folder-wrapper svg {
-    width: 5rem;
+  .folder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
     height: auto;
     color: var(--clr-light);
   }
-  
+
+  .folder-icon-png{
+    margin-top: 0.5rem;
+    width: 3.5rem;
+    height: auto;
+  }
+
   .folder-label {
-    display: block;
-    color: var(--clr-light);
+    border: 1px solid transparent; /* Add transparent border by default */
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
   
   .window {
@@ -619,10 +685,10 @@
     cursor: url('/cursor-pointer.cur'), pointer;
   }
   
-  .file-icon svg {
+  .file-icon-file{
     border: 1px solid transparent; /* Add transparent border by default */
     padding: 0.5rem;
-    width: 7.20rem;
+    width: 4.5rem;
     height: auto;
   }
 

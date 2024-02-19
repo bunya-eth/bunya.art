@@ -2,7 +2,6 @@ const folder = () => {
   $(document).ready(function() {
     var wasDragged = false;
     var timeout;
-
     // Dynamically calculate containment boundaries to prevent overflow
     function updateContainment() {
       const headerHeight = $("#header").outerHeight(true);
@@ -61,7 +60,7 @@ const folder = () => {
         setTimeout(function() { wasDragged = false; }, 100);
       }
     });
-
+    
     // Open the folder window on folder icon double click
     $('#folder-icon-wrapper').dblclick(function() {
       if (!wasDragged) {
@@ -74,6 +73,7 @@ const folder = () => {
         }, 300);
       }
     });
+    
 
     let lastTap = 0;
 $('#folder-icon-wrapper').on('touchend', function(event) {
@@ -157,6 +157,7 @@ $(document).on('touchend', '.file-icon', function(event) {
       $(this).closest('.window').hide();
     });
 
+
     // File click functionality to open text file windows
     $(document).on('dblclick', '.file-icon', function() {
       if (!wasDragged) {
@@ -206,6 +207,7 @@ $(document).on('touchend', '.file-icon', function(event) {
     <p>${content}</p>
   </div>
 </div>`).appendTo('body');
+
 if (animate) {
   $(`#${fileContentId}`).css({
     opacity: 0,
@@ -218,7 +220,6 @@ if (animate) {
   // Show without animation if not specified
   $(`#${fileContentId}`).show();
 }
-  
 
   $(`#${fileContentId} .window-content`).html(`<p>${content}</p>`);
 
@@ -226,14 +227,17 @@ if (animate) {
       textFileWindow.draggable({
         handle: '.window-title-bar',
         containment: updateFolderWindowContainment()
+        
       });
     }
-    // Disable dragging on mobile devices
-    if ('ontouchstart' in document.documentElement) {
-      $("#folder-icon-wrapper").draggable("disable");
-      $('.window').draggable("disable");
-    }
   });
+  
+  if ('ontouchstart' in document.documentElement) {
+    $("#folder-icon-wrapper").draggable("disable");
+    $('.window').draggable("disable");
+  }
+  
+  
 };
 
 export default folder;

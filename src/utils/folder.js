@@ -95,12 +95,14 @@ $('#folder-icon-wrapper').on('touchend', function(event) {
   lastTap = currentTime;
 });
 
+
 // File click functionality to open text file windows with touch support
 $(document).on('touchend', '.file-icon', function(event) {
   event.preventDefault(); // Prevent the default action to ensure touch event is handled properly
   const currentTime = new Date().getTime();
   const tapLength = currentTime - lastTap;
   clearTimeout(timeout);
+  
 
   if (tapLength < 300 && tapLength > 0) {
     // Double tap logic
@@ -136,6 +138,13 @@ $(document).on('touchend', '.file-icon', function(event) {
         containment: updateFolderWindowContainment()
       });
     });
+
+    if ('ontouchstart' in document.documentElement) {
+      // Disable draggable for all elements with .draggable class
+      $('.draggable').draggable('disable');
+          // Alternatively, if you want to disable draggable for specific elements by ID or class
+    $("#folder-icon-wrapper, .window").draggable('disable');
+  }
 
     // Minimize functionality
     $(document).on('click', '.window-minimize', function() {
@@ -208,6 +217,7 @@ $(document).on('touchend', '.file-icon', function(event) {
   </div>
 </div>`).appendTo('body');
 
+
 if (animate) {
   $(`#${fileContentId}`).css({
     opacity: 0,
@@ -231,12 +241,6 @@ if (animate) {
       });
     }
   });
-  
-  if ('ontouchstart' in document.documentElement) {
-    $("#folder-icon-wrapper").draggable("disable");
-    $('.window').draggable("disable");
-  }
-  
   
 };
 
